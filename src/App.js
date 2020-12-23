@@ -52,7 +52,7 @@ class App extends Component {
   };
 
   handleTwoSquareComparaisonAndLogic = (squareClicked) => {
-    let { lastSquareClicked, inputBlocked, score } = this.state;
+    let { lastSquareClicked, score } = this.state;
     let squares = [...this.state.squares];
 
     // * si les 2 cartes sont identiques

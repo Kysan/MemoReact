@@ -4,10 +4,10 @@ import React, { Component } from "react";
 // * transform: rotateY(180deg); pour faire un effet stylé sur la carte
 class Square extends Component {
   handleClick = () => {
-    let { value, clicked, cleared, id } = this.props;
+    // let { value, clicked, cleared, id } = this.props;
 
-    // * ne peux pas être recliqué
-    // * ne peux pas être cliqué si il est déjà clear
+    // * ne peut pas être recliqué
+    // * ne peut pas être cliqué si il est déjà clear
     if (!this.props.clicked && !this.props.cleared) {
       // * this.props <=> { <value>, <clicked>, <cleared>, <id> }
       this.props.handleClick(this.props);
@@ -16,9 +16,11 @@ class Square extends Component {
 
   render() {
     let { value, clicked, cleared, id } = this.props;
-    let style = clicked ? { transform: "transform .25s ease-in-out" } : {};
+    // * à rajouter pour faire une animation
+    // * let style = clicked ? { transform: "transform .25s ease-in-out" } : {};
+    // * style={style}>
     return (
-      <div className="square" onClick={this.handleClick} id={id} style={style}>
+      <div className="square" onClick={this.handleClick} id={id}>
         {clicked || cleared ? value : "x"}
       </div>
     );
