@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import Board from "./components/Board";
-import Header from "./components/header";
+import Header from "./components/Header";
 import Score from "./components/Score";
 
 class App extends Component {
@@ -37,6 +37,12 @@ class App extends Component {
     this.setState({ squares });
   };
 
+  hasUserWon = () => {
+    const { squares } = this.state;
+    for (let square of squares) if (!square.cleared) return false;
+    return true;
+  };
+
   handleSquareReveal = (mySquare) => {
     let squares = [...this.state.squares];
     squares[mySquare.id].clicked = true;
@@ -46,7 +52,7 @@ class App extends Component {
   };
 
   handleTwoSquareComparaisonAndLogic = (squareClicked) => {
-    let { lastSquareClicked, inputBlocked } = this.state;
+    let { lastSquareClicked, inputBlocked, score } = this.state;
     let squares = [...this.state.squares];
 
     // * si les 2 cartes sont identiques
@@ -60,6 +66,12 @@ class App extends Component {
       squares[lastSquareClicked.id].clicked = false;
       squares[squareClicked.id].clicked = false;
       this.setState({ squares, lastSquareClicked: null });
+    }
+
+    // * on check si il a gagné
+    if (this.hasUserWon()) {
+      alert(`GG ! You won with ${score} points ! (press F5 to restart)`);
+      return;
     }
 
     this.setState({ inputBlocked: false });
