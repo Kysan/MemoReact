@@ -8,7 +8,7 @@
 
 ### TODO:
 
--score system is shit need to add a timer
--design could be so much better
--change cases into cards
--add an animation when cards are fliping
+-score system is shit need to add a timer</br>
+-design could be so much better</br>
+-change cases into cards</br>
+-add an animation when cards are fliping</br>
