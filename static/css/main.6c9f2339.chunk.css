@@ -1,0 +1,2 @@
+body{margin:0;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","Roboto","Oxygen","Ubuntu","Cantarell","Fira Sans","Droid Sans","Helvetica Neue",sans-serif;background-color:#e0ffff}.my-header{margin:5 5 20% 20%;display:flex;justify-content:center;font-size:large}.score{text-align:center}.board{flex-direction:column}.board,.board>.row{display:flex;justify-content:center}.board>.row{flex-direction:row}.square{height:50px;width:50px;margin:15px;text-align:center;background-color:grey;border-radius:5%}
+/*# sourceMappingURL=main.6c9f2339.chunk.css.map */
